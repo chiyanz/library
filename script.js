@@ -14,8 +14,6 @@ newBookBtn.addEventListener('click', () => {
 
 
 
-
-
 class Book {
   constructor(title, author, pages, read) {
       this.title = form.title.value; 
