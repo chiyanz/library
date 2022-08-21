@@ -1,0 +1,30 @@
+body {
+  background: rgb(104,71,228);
+background: linear-gradient(90deg, rgba(104,71,228,1) 0%, rgba(117,72,244,1) 50%, rgba(140,116,215,1) 100%);
+  text-align: center;
+}
+
+h1 {
+  color: #FFF; 
+  opacity: 0.8;
+}
+
+p {
+  color: #FFF;
+  opacity: 0.7;
+}
+
+#pop-up {
+  display: none;
+
+}
+
+
+ul {
+  padding: 0;
+}
+
+ul li {
+  padding: 0;
+  list-style-type: none;
+}
