@@ -20,7 +20,7 @@ p {
 #pop-up {
   display: none;
   background-color: aliceblue;
-  border-radius: .5px;
+  border-radius: 5px;
   border-color: #000;
   width: 40%;
   margin: auto;
