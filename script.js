@@ -1,4 +1,4 @@
-const addBookBtn = document.querySelector('#addBookBtn')
+const addBookBtn = document.querySelector('#addBtn')
 const newBookBtn = document.querySelector('#newBookBtn')
 const popUpForm = document.querySelector('#pop-up')
 const bookForm = document.querySelector('#form')
@@ -6,14 +6,23 @@ const bookForm = document.querySelector('#form')
 let myLibrary = []
 let newBook
 
+
 const addBookToLibrary = () => {
-  popUpForm.style.display = 'none'
-  newBook = new Book(title, author, pages,read); 
-    myLibrary.push(newBook); 
+  event.preventDefault()
+  console.log('what is going on here')
+  const title = document.querySelector('#title').value
+  const author = document.querySelector('#author').value
+  const pages = document.querySelector('#pages').value
+  const read = document.querySelector('#read').value
+  newBook = new Book(title, author, pages,read)
+  myLibrary.push(newBook)
   console.log(newBook)
+  popUpForm.style.display = 'none'
+  bookForm.reset()
 }
 
 addBookBtn.addEventListener('click', addBookToLibrary)
+
 newBookBtn.addEventListener('click', () => {
   popUpForm.style.display = 'block'
 })

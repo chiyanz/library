@@ -9,17 +9,23 @@
 </head>
 
 <body>
-  <div id="newBookBtn">
+  <div>
     <button id="newBookBtn">+ New Book</button>
   </div>
+  
   <div id="pop-up">
-    <h2>New Book</h2>
-    <form id="form">
-      <input type='text' name='title' placeholder='Title' required />
-      <input type='text' name='author' placeholder='Author' required />
-      <input placeholder='Page count' type='number' name='pages' required />
-      <label >Read: </label><input type="checkbox" value="yes" name="read"/>
-      <button type='submit' form='form' id='addBookBtn'>Add</button>
+    <form id='form' action='/script.js'>
+        <span class="close">&times;</span>
+        <ledgend>New Book</ledgend>
+        <div id='textInput'> 
+            <p><input type='text' id='title' name='title' placeholder='Title'></p>
+            <p><input type='text' id='author' name='author' placeholder='Author'></p>
+            <p><input type='text' id='pages' name='pages' placeholder='Pages'></p>
+        </div>
+        <div id='checkBox'>
+            <p><label >Read: </label><input type='checkbox' id='read' name='read' value='yes'></p>
+        </div>
+        <button type='button' id='addBtn'>Add</button>
     </form>
   </div>
   <div className = "book-container"></div>
