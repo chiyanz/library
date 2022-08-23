@@ -31,7 +31,14 @@ function displayBook(book) {
   deleteBtn.textContent = 'X'
 
   readBtn.classList.add('button-17')
-  readBtn.textContent = "Read"
+  if(book.read != true) {
+    readBtn.textContent = 'Not Read'
+    readBtn.style.backgroundColor = '#e04f63'
+  }
+  else {
+    readBtn.textContent = 'Read'
+    readBtn.style.backgroundColor = '#7BE383'
+  }
 
   titleDiv.textContent = book.title
   titleDiv.classList.add('title')
@@ -55,6 +62,11 @@ function displayBook(book) {
     myLibrary.splice(myLibrary.indexOf(book), 1)
     render()
   })
+
+  readBtn.addEventListener('click', () => {
+    book.read = !book.read
+    render()
+  })
 }
 
 const addBookToLibrary = () => {
@@ -62,7 +74,7 @@ const addBookToLibrary = () => {
   const title = document.querySelector('#title').value
   const author = document.querySelector('#author').value
   const pages = document.querySelector('#pages').value
-  const read = document.querySelector('#read').value
+  const read = document.querySelector('#read').checked
   newBook = new Book(title, author, pages,read)
   myLibrary.push(newBook)
   popUpForm.style.display = 'none'
