@@ -60,11 +60,14 @@ function displayBook(book) {
 
   deleteBtn.addEventListener('click', () => {
     myLibrary.splice(myLibrary.indexOf(book), 1)
+    setData()
     render()
+
   })
 
   readBtn.addEventListener('click', () => {
     book.read = !book.read
+    setData()
     render()
   })
 }
@@ -79,8 +82,7 @@ const addBookToLibrary = () => {
   myLibrary.push(newBook)
   popUpForm.style.display = 'none'
   bookForm.reset()
-
-
+  setData()
   render()
 }
 
@@ -104,4 +106,21 @@ class Book {
   }
 }
 
+
+function setData() {
+  localStorage.setItem(`myLibrary`, JSON.stringify(myLibrary));
+}
+
+function restore() {
+  if(!localStorage.myLibrary) {
+      render()
+  }else {
+      let objects = localStorage.getItem('myLibrary') // gets information from local storage to use in below loop to create DOM/display
+      objects = JSON.parse(objects)
+      myLibrary = objects
+      render()
+  }
+}
+
+restore()
 
